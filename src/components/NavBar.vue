@@ -1,8 +1,10 @@
 <template>
     <div class="nav-bar">
         <img class="logo" alt="Cineseek logo" src="../assets/cineseek.svg" />
+        <div class="search-container">
         <input class="search-input" placeholder="Search" /> 
         <button class="search-button" role="submit">SEEK</button>
+        </div>
     </div>
 </template>
 <script>
@@ -23,15 +25,36 @@ export default {};
     display: flex;
     margin: auto;
     padding: 2rem;
+    border-bottom: #666 1px solid;
+}
+
+.search-container {
+    padding: 2rem 1.5rem;
+    display: flex;
 }
 
 .search-input {
     color: white;
-    background-color: #666;
-    opacity: 30%;
+    background-color: #333;
     margin-right: 1rem;
     height: 2rem;
-    border-radius: .5rem;
     border: none;
+    flex-grow: 2;
+    &::placeholder {
+        color: #eee;
+        opacity: 100%;
+        padding-left: .5rem;
+    }
+}
+
+.search-button {
+    height: 2rem;
+    background-color: #ccc;
+    border: none;
+    padding: 0 1rem;
+    
+    &:hover {
+        background-color: yellow;
+    }
 }
 </style>
