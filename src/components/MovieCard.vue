@@ -16,6 +16,10 @@ export default {
         background-color: darkgray;
         width: 18rem;
         height: 400px;
+        display: block;
+        margin-bottom: 1rem;
+    @media (min-width: 415px) {
         margin: 1rem 0 0 1rem;
+    }
     }
 </style>
