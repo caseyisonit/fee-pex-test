@@ -12,10 +12,9 @@ export default {};
 .nav-bar {
     background-color: black;
     height: 100vh;
-    width: 300px;
-    position: absolute;
-    left: 0;
-    top: 0;
+    width: 20rem;
+    position: fixed;
+    margin: 0;
 }
 
 .logo {
