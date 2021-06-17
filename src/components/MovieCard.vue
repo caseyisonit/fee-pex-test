@@ -1,12 +1,14 @@
 <template>
     <div class="card-container">
-        
+        <h2>{{ movie.title }}</h2>
     </div>
 </template>
 <script>
-import movies from '@/assets/mocks/movies.json'
+import Vue from 'vue'
 export default {
-    
+    props: {
+        movie: { type: Object, required: true}
+    }
 }
 </script>
 <style lang="scss">

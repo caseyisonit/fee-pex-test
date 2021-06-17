@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <nav-bar></nav-bar>
-    <movie-grid></movie-grid>
+    <movie-grid :movies="movies"></movie-grid>
   </div>
 </template>
 
@@ -11,6 +11,7 @@ import HelloWorld from "./components/HelloWorld.vue";
 import MovieCard from "./components/MovieCard.vue";
 import MovieGrid from "./components/MovieGrid.vue";
 import NavBar from "./components/NavBar.vue";
+import movies from '@/assets/mocks/movies.json'
 
 export default Vue.extend({
   name: "App",
@@ -18,6 +19,11 @@ export default Vue.extend({
     NavBar,
     MovieGrid,
   },
+  data() {
+    return {
+      movies: movies
+    }
+  }
 });
 </script>
 

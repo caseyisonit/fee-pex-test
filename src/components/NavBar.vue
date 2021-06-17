@@ -1,8 +1,8 @@
 <template>
     <div class="nav-bar">
-        <img class="logo" alt="Vue logo" src="../assets/logo.png" />
+        <img class="logo" alt="Cineseek logo" src="../assets/cineseek.svg" />
         <input class="search-input" placeholder="Search" /> 
-        <button class="search-button" role="submit">Go</button>
+        <button class="search-button" role="submit">SEEK</button>
     </div>
 </template>
 <script>
@@ -18,13 +18,20 @@ export default {};
 }
 
 .logo {
-    height: 75px;
+    width: 13rem;
     padding: 1rem;
     display: flex;
     margin: auto;
+    padding: 2rem;
 }
 
 .search-input {
     color: white;
+    background-color: #666;
+    opacity: 30%;
+    margin-right: 1rem;
+    height: 2rem;
+    border-radius: .5rem;
+    border: none;
 }
 </style>
