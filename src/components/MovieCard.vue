@@ -1,11 +1,15 @@
 <template>
     <div class="card-container">
         <h2>{{ movie.title }}</h2>
+        <genre-tag :genres="movie.genre"></genre-tag>
     </div>
 </template>
 <script>
 import Vue from 'vue'
+import GenreTag from "./GenreTag.vue"
+
 export default {
+    components: { GenreTag },
     props: {
         movie: { type: Object, required: true}
     }

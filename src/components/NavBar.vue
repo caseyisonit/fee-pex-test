@@ -15,7 +15,6 @@ export default {};
 <style lang="scss">
 .nav-bar {
     background-color: black;
-    // display: flex;
     width: 100vw;
     margin: 0;
     @media (min-width: 415px) {
@@ -49,13 +48,16 @@ export default {};
     color: white;
     background-color: #333;
     margin-right: 1rem;
+    padding-left: .5rem;
     height: 2rem;
     border: none;
     flex-grow: 2;
     &::placeholder {
         color: #cccccc;
         opacity: 100%;
-        padding-left: 0.5rem;
+    }
+    &:focus-visible {
+        outline-color: white;
     }
 }
 
@@ -64,7 +66,6 @@ export default {};
     background-color: #ccc;
     border: none;
     padding: 0 1rem;
-
     &:hover {
         background-color: yellow;
     }

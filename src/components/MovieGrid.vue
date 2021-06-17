@@ -6,8 +6,15 @@
     </div>
 </template>
 <script>
-import Vue from "vue"; import MovieCard from "./MovieCard.vue"; export default {
-components: { MovieCard }, props: { movies: { type: Array, required: true } } };
+import Vue from "vue"; 
+import MovieCard from "./MovieCard.vue"; 
+
+export default {
+    components: { MovieCard }, 
+    props: { 
+        movies: { type: Array, required: true } 
+    } 
+};
 </script>
 <style lang="scss">
 .movie-grid-container {
