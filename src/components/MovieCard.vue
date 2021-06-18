@@ -45,12 +45,14 @@ export default {
         position: relative;
         display: flex;
         top: 1rem;
-        width: 16rem;
-        height: 18rem;
+        width: 14rem;
+        height: 16rem;
         margin: auto;
         border: 1px solid #eeeeee;
+        padding: 1rem;
         h2 {
             font-size: 2rem;
+            line-height: 2rem;
         }
         .genre-container {
             position: absolute;
