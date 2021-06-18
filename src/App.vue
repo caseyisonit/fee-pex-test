@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { mapGetters, mapActions, mapState } from 'vuex';
+import { mapState } from 'vuex';
 import HelloWorld from './components/HelloWorld.vue';
 import MovieCard from './components/MovieCard.vue';
 import MovieGrid from './components/MovieGrid.vue';

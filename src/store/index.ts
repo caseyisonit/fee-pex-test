@@ -8,28 +8,46 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
-        movies: {},
+        movies: [],
         genres: []
     },
     mutations: {
         setMovies(state, payload) {
             state.movies = payload;
+        },
+        setGenres(state, payload) {
+            state.genres = payload;
         }
     },
     actions: {
         fetchMovies({ commit }) {
-                axios.get(`/mock/movies.json`)
-                    .then((response) => {
-                        console.log(response.data);
-                        commit('setMovies', response.data);
-                        return response.data;
-                    })
-                    .catch((error) => {
-                      console.log(error)
+            axios
+                .get(`/mock/movies.json`)
+                .then((response) => {
+                    const movies = response.data;
+                    commit('setMovies', movies);
+                    const collectionOfGenres = [];
+
+                    movies.forEach((movie) => {
+                        movie.genre.forEach((type) => {
+                            collectionOfGenres.push(type);
+                        });
                     });
+
+                    const uniqueGenres = Array.from(new Set(collectionOfGenres.map((a) => a.id))).map((id) => {
+                        return collectionOfGenres.find((a) => a.id === id);
+                    });
+
+                    commit('setGenres', uniqueGenres);
+                    return movies;
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
         }
     },
     getters: {
-        getMovies: (state) => state.movies
+        getMovies: (state) => state.movies,
+        getGenres: (state) => state.genres
     }
 });
