@@ -13,7 +13,7 @@ export default {
     components: { MovieCard }, 
     props: { 
         movies: { type: Array, required: true } 
-    } 
+    }
 };
 </script>
 <style lang="scss">
