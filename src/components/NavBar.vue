@@ -10,7 +10,7 @@
     </div>
 </template>
 <script>
-export default {};
+export default {}
 </script>
 <style lang="scss">
 .nav-bar {
@@ -48,7 +48,7 @@ export default {};
     color: white;
     background-color: #333;
     margin-right: 1rem;
-    padding-left: .5rem;
+    padding-left: 0.5rem;
     height: 2rem;
     border: none;
     flex-grow: 2;

@@ -6,12 +6,12 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import { mapGetters, mapActions } from 'vuex'
-import HelloWorld from './components/HelloWorld.vue'
-import MovieCard from './components/MovieCard.vue'
-import MovieGrid from './components/MovieGrid.vue'
-import NavBar from './components/NavBar.vue'
+import Vue from 'vue';
+import { mapGetters, mapActions } from 'vuex';
+import HelloWorld from './components/HelloWorld.vue';
+import MovieCard from './components/MovieCard.vue';
+import MovieGrid from './components/MovieGrid.vue';
+import NavBar from './components/NavBar.vue';
 
 export default Vue.extend({
     name: 'App',
@@ -25,7 +25,7 @@ export default Vue.extend({
     methods: {
         ...mapActions(['fetchMovies'])
     }
-})
+});
 </script>
 
 <style lang="scss">

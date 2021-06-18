@@ -6,13 +6,13 @@
     </div>
 </template>
 <script>
-import Vue from "vue"; 
-import MovieCard from "./MovieCard.vue"; 
+import Vue from 'vue';
+import MovieCard from './MovieCard.vue';
 
 export default {
-    components: { MovieCard }, 
-    props: { 
-        movies: { type: Array, required: true } 
+    components: { MovieCard },
+    props: {
+        movies: { type: Array, required: true }
     }
 };
 </script>
