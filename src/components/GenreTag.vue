@@ -16,7 +16,7 @@ export default {
 </script>
 <style lang="scss">
     .genre-tag-container {
-        background-color: yellow;
+        background-color: #eeeeee;
         height: 1.5rem;
         width: 6rem;
         margin: 1rem;
