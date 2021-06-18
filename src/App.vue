@@ -1,13 +1,13 @@
 <template>
     <div id="app">
         <nav-bar></nav-bar>
-        <movie-grid :movies="getMovies"></movie-grid>
+        <movie-grid :movies="movies"></movie-grid>
     </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions, mapState } from 'vuex';
 import HelloWorld from './components/HelloWorld.vue';
 import MovieCard from './components/MovieCard.vue';
 import MovieGrid from './components/MovieGrid.vue';
@@ -19,12 +19,12 @@ export default Vue.extend({
         NavBar,
         MovieGrid
     },
-    computed: {
-        ...mapGetters(['getMovies'])
+    mounted () {
+        this.$store.dispatch('fetchMovies')
     },
-    methods: {
-        ...mapActions(['fetchMovies'])
-    }
+    computed: 
+      mapState(['movies'])
+    
 });
 </script>
 

@@ -8,7 +8,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
-        movies: [],
+        movies: {},
         genres: []
     },
     mutations: {
@@ -18,19 +18,15 @@ export default new Vuex.Store({
     },
     actions: {
         fetchMovies({ commit }) {
-            return (resolve, reject) => {
-                axios
-                    .get(`assets/movies.json`)
+                axios.get(`/mock/movies.json`)
                     .then((response) => {
-                        console.log(response);
-                        commit('setMovies', response);
-                        resolve(response);
-                        return response;
+                        console.log(response.data);
+                        commit('setMovies', response.data);
+                        return response.data;
                     })
                     .catch((error) => {
-                        reject(error);
+                      console.log(error)
                     });
-            };
         }
     },
     getters: {
