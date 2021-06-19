@@ -20,7 +20,8 @@ import MovieCard from './MovieCard.vue';
 export default {
     data() {
         return {
-            search: ''
+            search: '',
+            selectedGenre: ''
         };
     },
     components: { MovieCard },
@@ -29,10 +30,17 @@ export default {
     },
     computed: {
         filteredMovies() {
-            const matchedByName = this.movies.filter((movie) => {
-                return movie.title.toLowerCase().includes(this.search.toLowerCase());
-            });
-            return matchedByName;
+            let tempMovies = this.movies;
+
+            //search input for names
+            //need to add in genre and actors
+            if (this.search != '' && this.search) {
+                tempMovies = tempMovies.filter((movie) => {
+                    return movie.title.toLowerCase().includes(this.search.toLowerCase());
+                });
+            }
+
+            return tempMovies;
         }
     }
 };
