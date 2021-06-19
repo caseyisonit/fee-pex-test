@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <nav-bar></nav-bar>
-        <movie-grid :movies="movies"></movie-grid>
+        <movie-grid :movies="movies" ></movie-grid>
     </div>
 </template>
 
@@ -15,16 +15,17 @@ import NavBar from './components/NavBar.vue';
 
 export default Vue.extend({
     name: 'App',
+    
     components: {
         NavBar,
         MovieGrid
     },
-    mounted () {
-        this.$store.dispatch('fetchMovies')
+    created() {
+          this.$store.dispatch('fetchMovies');
     },
-    computed: 
-      mapState(['movies'])
-    
+    computed: {
+        ...mapState(['movies', 'genres'])
+    }
 });
 </script>
 
@@ -34,10 +35,13 @@ body {
 }
 
 #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 700;
 }
 </style>

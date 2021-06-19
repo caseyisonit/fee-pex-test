@@ -9,7 +9,9 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     state: {
         movies: [],
-        genres: []
+        genres: [],
+        filteredMovies: [],
+        searchedMovies: []
     },
     mutations: {
         setMovies(state, payload) {
@@ -17,10 +19,17 @@ export default new Vuex.Store({
         },
         setGenres(state, payload) {
             state.genres = payload;
+        },
+        setFilteredMovies(state, payload) {
+            state.filteredMovies = payload
+        },
+        setSearchedMovies(state, payload) {
+            state.searchedMovies = payload
         }
     },
     actions: {
         fetchMovies({ commit }) {
+          return new Promise((resolve, reject) => {
             axios
                 .get(`/mock/movies.json`)
                 .then((response) => {
@@ -34,20 +43,30 @@ export default new Vuex.Store({
                         });
                     });
 
-                    const uniqueGenres = Array.from(new Set(collectionOfGenres.map((a) => a.id))).map((id) => {
-                        return collectionOfGenres.find((a) => a.id === id);
+                    const uniqueGenres = Array.from(new Set(collectionOfGenres.map((genre) => genre.id))).map((id) => {
+                        return collectionOfGenres.find((genre) => genre.id === id);
                     });
 
                     commit('setGenres', uniqueGenres);
+                    resolve(response)
                     return movies;
                 })
                 .catch((error) => {
                     console.log(error);
+                    reject(error)
                 });
-        }
+              })
+        },
+        filteredMovies({ state, commit }, payload = "") {
+          const result = payload
+  
+          return commit('setFilteredSites', result)
+      },
     },
     getters: {
         getMovies: (state) => state.movies,
-        getGenres: (state) => state.genres
+        getGenres: (state) => state.genres,
+        getFilteredMovies: (state) => state.filteredMovies,
+        getSearchedMovies: (state) => state.searchedMovies
     }
 });

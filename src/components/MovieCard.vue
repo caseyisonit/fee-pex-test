@@ -36,10 +36,7 @@ export default {
     width: 18rem;
     height: 20rem;
     display: block;
-    margin-bottom: 1rem;
-    @media (min-width: 415px) {
-        margin: 1rem 0 0 1rem;
-    }
+    margin-bottom: 2rem;
 }
 
 .content-container {
