@@ -26,11 +26,11 @@ export default new Vuex.Store({
                 .then((response) => {
                     const movies = response.data;
                     commit('setMovies', movies);
-                    const collectionOfGenres = [];
+                    const collectionOfGenres : any[] = [];
 
                     movies.forEach((movie) => {
-                        movie.genre.forEach((type) => {
-                            collectionOfGenres.push(type);
+                        movie.genre.forEach((singleGenre) => {
+                            collectionOfGenres.push(singleGenre);
                         });
                     });
 
