@@ -40,10 +40,10 @@ export default {
 <style lang="scss">
 .search-container {
     padding: 1rem;
-    display: block;
+    display: flex;
     @media (min-width: 415px) {
         padding: 2rem 1.5rem;
-        display: flex;
+        width: 33vw;
     }
     .search-input {
         color: #000;

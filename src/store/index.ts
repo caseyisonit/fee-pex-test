@@ -10,8 +10,6 @@ export default new Vuex.Store({
     state: {
         movies: [],
         genres: [],
-        filteredMovies: [],
-        searchedMovies: []
     },
     mutations: {
         setMovies(state, payload) {
@@ -19,12 +17,6 @@ export default new Vuex.Store({
         },
         setGenres(state, payload) {
             state.genres = payload;
-        },
-        setFilteredMovies(state, payload) {
-            state.filteredMovies = payload
-        },
-        setSearchedMovies(state, payload) {
-            state.searchedMovies = payload
         }
     },
     actions: {
@@ -56,17 +48,10 @@ export default new Vuex.Store({
                     reject(error)
                 });
               })
-        },
-        filteredMovies({ state, commit }, payload = "") {
-          const result = payload
-  
-          return commit('setFilteredSites', result)
-      },
+        }
     },
     getters: {
         getMovies: (state) => state.movies,
-        getGenres: (state) => state.genres,
-        getFilteredMovies: (state) => state.filteredMovies,
-        getSearchedMovies: (state) => state.searchedMovies
+        getGenres: (state) => state.genres
     }
 });
