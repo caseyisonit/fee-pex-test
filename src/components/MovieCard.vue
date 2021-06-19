@@ -50,12 +50,13 @@ export default {
     border: 1px solid #eeeeee;
     padding: 1rem;
     h2 {
-        font-size: 2rem;
-        line-height: 2rem;
+        font-size: 2.25rem;
+        line-height: 2.25rem;
     }
     .genre-container {
         position: absolute;
         bottom: 0;
+        left: 0;
     }
 }
 </style>

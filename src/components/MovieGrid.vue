@@ -80,7 +80,7 @@ export default {
     display: flex;
     flex-flow: wrap;
     align-content: space-around;
-    justify-content: space-around;
+    justify-content: space-evenly;
     padding: 1rem;
     @media (min-width: 415px) {
         padding: 2rem 1.5rem;

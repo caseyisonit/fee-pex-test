@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="genre-tag-container" v-for="(genre, index) in genres" :key="genre.index">
+        <div class="genre-tag" v-for="(genre, index) in genres" :key="genre.index">
             <p :key="index">{{ genre.title }}</p>
         </div>
     </div>
@@ -14,11 +14,18 @@ export default {
     }
 };
 </script>
-<style lang="scss">
-.genre-tag-container {
+<style scoped lang="scss">
+.genre-tag {
     background-color: #eeeeee;
-    height: 1.5rem;
+    height: 1.75rem;
     width: 6rem;
     margin: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    p {
+        font-weight: bold;
+    }
 }
 </style>

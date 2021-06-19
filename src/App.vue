@@ -40,8 +40,9 @@ body {
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
+    background-image: url('assets/so-white.png');
 }
 h1,h2,h3,h4,h5,h6 {
-  font-weight: 700;
+  font-weight: 100;
 }
 </style>

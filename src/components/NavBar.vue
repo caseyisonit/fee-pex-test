@@ -9,6 +9,8 @@ export default {}
 <style lang="scss">
 .nav-bar {
     background-color: black;
+    background-image: url('../assets/beanstalk-dark.png');
+    
     width: 100vw;
     margin: 0;
 }
