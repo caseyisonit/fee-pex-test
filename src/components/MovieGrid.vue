@@ -1,10 +1,20 @@
 <template>
     <div>
-        <div class="search-container">
-            <div class="search-icon" role="submit">
-                <font-awesome-icon icon="search" />
+        <div class="search-filter-container">
+            <div class="search-container">
+                <div class="search-icon" role="submit">
+                    <font-awesome-icon icon="search" />
+                </div>
+                <input class="search-input" placeholder="Seek" v-model="search" />
             </div>
-            <input class="search-input" placeholder="Seek" v-model="search" />
+            <div class="filter-conatiner">
+                <select v-model="selectedGenre" aria-placeholder="Filter">
+                    <option value="view all">View All</option>
+                    <option v-for="(genre, index) in genres" :value="genre.title" :key="index">
+                        {{ genre.title }}
+                    </option>
+                </select>
+            </div>
         </div>
         <div class="movie-grid-container">
             <div v-for="(movie, index) in filteredMovies" :key="index">
@@ -26,17 +36,43 @@ export default {
     },
     components: { MovieCard },
     props: {
-        movies: { type: Array, required: true }
+        movies: { type: Array, required: true },
+        genres: { type: Array, required: true }
     },
     computed: {
         filteredMovies() {
             let tempMovies = this.movies;
 
-            //search input for names
-            //need to add in genre and actors
             if (this.search != '' && this.search) {
                 tempMovies = tempMovies.filter((movie) => {
-                    return movie.title.toLowerCase().includes(this.search.toLowerCase());
+                    //checks movie title
+                    if (movie.title.toLowerCase().includes(this.search.toLowerCase())) {
+                        return movie;
+                    }
+                    //checks genre
+                    else if (
+                        movie.genre.some((singleGenre) => {
+                            return singleGenre.title.toLowerCase().includes(this.search.toLowerCase());
+                        })
+                    ) {
+                        return movie;
+                    }
+                    //checks actor
+                    else if (
+                        movie.actors.some((actor) => {
+                            return actor.name.toLowerCase().includes(this.search.toLowerCase());
+                        })
+                    ) {
+                        return movie;
+                    }
+                });
+            } else if (this.selectedGenre === 'view all') {
+                return tempMovies;
+            } else if (this.selectedGenre !== '' && this.selectedGenre) {
+                tempMovies = tempMovies.filter((movie) => {
+                    return movie.genre.some((singleGenre) => {
+                        return singleGenre.title.toLowerCase().includes(this.selectedGenre.toLowerCase());
+                    });
                 });
             }
 
@@ -49,8 +85,12 @@ export default {
 .search-container {
     padding: 1rem;
     display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
     @media (min-width: 415px) {
         padding: 2rem 1.5rem;
+        flex-shrink: 2;
         width: 33vw;
     }
     .search-input {
