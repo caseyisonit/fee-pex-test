@@ -8,20 +8,18 @@
 <script lang="ts">
 import Vue from 'vue';
 import { mapState } from 'vuex';
-import HelloWorld from './components/HelloWorld.vue';
-import MovieCard from './components/MovieCard.vue';
 import MovieGrid from './components/MovieGrid.vue';
 import NavBar from './components/NavBar.vue';
 
 export default Vue.extend({
     name: 'App',
-    
+
     components: {
         NavBar,
         MovieGrid
     },
     created() {
-          this.$store.dispatch('fetchMovies');
+        this.$store.dispatch('fetchMovies');
     },
     computed: {
         ...mapState(['movies', 'genres'])
@@ -43,9 +41,13 @@ body {
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    
 }
-h1,h2,h3,h4,h5,h6 {
-  font-weight: 100;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 100;
 }
 </style>

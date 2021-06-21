@@ -6,8 +6,6 @@
     </div>
 </template>
 <script>
-import Vue from 'vue';
-
 export default {
     props: {
         genres: { type: Array, required: true }

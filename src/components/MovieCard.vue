@@ -9,7 +9,6 @@
     </div>
 </template>
 <script>
-import Vue from 'vue';
 import GenreTag from './GenreTag.vue';
 
 export default {

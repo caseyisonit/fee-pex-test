@@ -7,7 +7,6 @@
                 </div>
                 <input class="input" placeholder="Seek" v-model="search" />
             </div>
-            <div class="flex-container seperator">— or —</div>
             <div class="flex-container">
                 <div class="icon">
                     <font-awesome-icon icon="filter" />
@@ -28,7 +27,6 @@
     </div>
 </template>
 <script>
-import Vue from 'vue';
 import MovieCard from './MovieCard.vue';
 
 export default {
@@ -46,7 +44,7 @@ export default {
     computed: {
         filteredMovies() {
             let tempMovies = this.movies;
-        
+
             //search input
             if (this.search != '' && this.search) {
                 tempMovies = tempMovies.filter((movie) => {
@@ -87,8 +85,7 @@ export default {
 
             return tempMovies;
         }
-        
-    },
+    }
 };
 </script>
 <style lang="scss">
@@ -108,17 +105,11 @@ export default {
     padding: 1rem;
     min-width: 18rem;
 }
-    .seperator {
-        color: #ffffff;
-        width: auto;
-        min-width: auto;
-        margin: auto 0;
-    }
+
 .input {
     color: #ffffff;
     background-color: #333333;
-    // margin: auto;
-    padding: .5rem;
+    padding: 0.5rem;
     padding-left: 0.5rem;
     border: #666 1px solid;
     flex-grow: 2;
@@ -130,6 +121,7 @@ export default {
         outline: #999999 1px solid;
     }
 }
+
 .icon {
     display: flex;
     align-content: center;
