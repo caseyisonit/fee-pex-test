@@ -19,7 +19,7 @@ export default {}
     margin: auto;
     padding: 2rem;
     display: block;
-    border-bottom: #666 1px solid;
+    // border-bottom: #666 1px solid;
     @media (min-width: 415px) {
         display: flex;
     }

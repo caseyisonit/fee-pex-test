@@ -36,7 +36,7 @@ export default {
     width: 18rem;
     height: 20rem;
     display: block;
-    margin-bottom: 2rem;
+    margin: 1rem;
 }
 
 .content-container {

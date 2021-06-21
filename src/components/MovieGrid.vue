@@ -1,14 +1,17 @@
 <template>
     <div>
         <div class="search-filter-container">
-            <div class="search-container">
-                <div class="search-icon" role="submit">
+            <div class="flex-container">
+                <div class="icon">
                     <font-awesome-icon icon="search" />
                 </div>
-                <input class="search-input" placeholder="Seek" v-model="search" />
+                <input class="input" placeholder="Seek" v-model="search" />
             </div>
-            <div class="filter-conatiner">
-                <select v-model="selectedGenre" aria-placeholder="Filter">
+            <div class="flex-container">
+                <div class="icon">
+                    <font-awesome-icon icon="filter" />
+                </div>
+                <select v-model="selectedGenre" name="genres" class="input">
                     <option value="view all">View All</option>
                     <option v-for="(genre, index) in genres" :value="genre.title" :key="index">
                         {{ genre.title }}
@@ -31,7 +34,7 @@ export default {
     data() {
         return {
             search: '',
-            selectedGenre: ''
+            selectedGenre: 'view all'
         };
     },
     components: { MovieCard },
@@ -42,7 +45,8 @@ export default {
     computed: {
         filteredMovies() {
             let tempMovies = this.movies;
-
+        
+            //search input
             if (this.search != '' && this.search) {
                 tempMovies = tempMovies.filter((movie) => {
                     //checks movie title
@@ -66,9 +70,13 @@ export default {
                         return movie;
                     }
                 });
-            } else if (this.selectedGenre === 'view all') {
+            }
+            //clears genre selector
+            else if (this.selectedGenre === 'view all') {
                 return tempMovies;
-            } else if (this.selectedGenre !== '' && this.selectedGenre) {
+            }
+            // genre selector filter
+            else if (this.selectedGenre !== '' && this.selectedGenre) {
                 tempMovies = tempMovies.filter((movie) => {
                     return movie.genre.some((singleGenre) => {
                         return singleGenre.title.toLowerCase().includes(this.selectedGenre.toLowerCase());
@@ -78,49 +86,54 @@ export default {
 
             return tempMovies;
         }
-    }
+        
+    },
 };
 </script>
 <style lang="scss">
-.search-container {
-    padding: 1rem;
+.search-filter-container {
+    display: flex;
+    flex-flow: wrap;
+    align-content: center;
+    justify-content: center;
+    background-color: #303030;
+}
+
+.flex-container {
     display: flex;
     justify-content: center;
     align-content: center;
-    margin: auto;
-    @media (min-width: 415px) {
-        padding: 2rem 1.5rem;
-        flex-shrink: 2;
-        width: 33vw;
+    align-items: stretch;
+    padding: 1rem;
+    min-width: 18rem;
+}
+.input {
+    color: #ffffff;
+    background-color: #333333;
+    // margin: auto;
+    padding: .5rem;
+    padding-left: 0.5rem;
+    border: #666 1px solid;
+    flex-grow: 2;
+    &::placeholder {
+        color: #bbbbbb;
+        opacity: 100%;
     }
-    .search-input {
-        color: #000;
-        background-color: #fefefe;
+    &:focus-visible {
+        outline: #999999 1px solid;
+    }
+}
+.icon {
+    display: flex;
+    align-content: center;
+    background-color: #030303;
+    border: #666 1px solid;
+    border-right: none;
+    padding: 0 0.5rem;
+    align-content: center;
+    svg {
         margin: auto;
-        height: 2rem;
-        padding-left: 0.5rem;
-        border: #dddddd 1px solid;
-        flex-grow: 2;
-        &::placeholder {
-            color: #bbbbbb;
-            opacity: 100%;
-        }
-        &:focus-visible {
-            outline: none;
-        }
-    }
-
-    .search-icon {
-        display: flex;
-        align-content: center;
-        background-color: #eeeeee;
-        border: #dddddd 1px solid;
-        padding: 0 0.5rem;
-        align-content: center;
-        svg {
-            margin: auto;
-            color: #aaaaaa;
-        }
+        color: #aaaaaa;
     }
 }
 
@@ -128,7 +141,7 @@ export default {
     display: flex;
     flex-flow: wrap;
     align-content: space-around;
-    justify-content: space-evenly;
+    justify-content: center;
     padding: 1rem;
     @media (min-width: 415px) {
         padding: 2rem 1.5rem;
