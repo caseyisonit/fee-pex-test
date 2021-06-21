@@ -79,51 +79,103 @@
     },
     {
         "id": 163982121944357889,
-        "title": "The Notebook clone 1",
+        "title": "Super Troopers",
         "genre": [
             {
-                "id": 2,
-                "title": "Drama"
+                "id": 3,
+                "title": "Comedy"
             },
             {
-                "id": 6,
-                "title": "Romance"
+                "id": 13,
+                "title": "Stoner"
             }
         ],
         "actors": [
             {
-                "id": 163982182073900544,
-                "name": "Ryan Gosling"
+                "id": 1639821820739020544,
+                "name": "Officer Farva"
             },
             {
                 "id": 163982199253770240,
-                "name": "Rachel McAdams"
+                "name": "Thorny"
             }
         ],
-        "is_series": false,
+        "is_series": true,
         "release_date": "2004-06-25T00:00:00.000000Z"
     },
     {
         "id": 163982121944357888,
-        "title": "The Notebook",
+        "title": "The Secret Life of Pets",
         "genre": [
             {
-                "id": 2,
-                "title": "Drama"
+                "id": 11,
+                "title": "Animated"
             },
             {
-                "id": 6,
-                "title": "Romance"
+                "id": 12,
+                "title": "Kids"
             }
         ],
         "actors": [
             {
-                "id": 163982182073900544,
-                "name": "Ryan Gosling"
+                "id": 1639821822073900544,
+                "name": "Chloe the Cat"
             },
             {
                 "id": 163982199253770240,
-                "name": "Rachel McAdams"
+                "name": "Scruff McGruff"
+            }
+        ],
+        "is_series": true,
+        "release_date": "2004-06-25T00:00:00.000000Z"
+    },
+    {
+        "id": 163979287265942017,
+        "title": "Cinderella",
+        "genre": [
+            {
+                "id": 11,
+                "title": "Animated"
+            },
+            {
+                "id": 12,
+                "title": "Kids"
+            }
+        ],
+        "actors": [
+            {
+                "id": 163978496991957504,
+                "name": "Cinderella"
+            },
+            {
+                "id": 163978647315813376,
+                "name": "Fairy Godmother"
+            }
+        ],
+        "is_series": false,
+        "release_date": "2000-04-14T00:00:00.000000Z"
+    },
+    {
+        "id": 163982121944357889,
+        "title": "Cry Baby",
+        "genre": [
+            {
+                "id": 14,
+                "title": "Musical"
+            },
+            {
+                "id": 3,
+                "title": "Comedy"
+            }
+        ],
+        "actors": [
+            {
+                "id": 1639821822073900544,
+                "name": "Cry Baby"
+            },
+            {
+                "id": 163982199253770240,
+                "name": "Ratchet Face"
             }
         ],
         "is_series": false,
@@ -131,7 +183,7 @@
     },
     {
         "id": 163979287265942017,
-        "title": "American Psycho",
+        "title": "Hot Fuzz",
         "genre": [
             {
                 "id": 4,
@@ -145,11 +197,11 @@
         "actors": [
             {
                 "id": 163978496991957504,
-                "name": "Christian Bale"
+                "name": "Simon Pegg"
             },
             {
                 "id": 163978647315813376,
-                "name": "Justin Theroux"
+                "name": "Nick Frost"
             }
         ],
         "is_series": false,
@@ -157,28 +209,28 @@
     },
     {
         "id": 163982121944357889,
-        "title": "The Notebook clone 1",
+        "title": "Mortal Kombat",
         "genre": [
             {
-                "id": 2,
-                "title": "Drama"
+                "id": 1,
+                "title": "Action"
             },
             {
-                "id": 6,
-                "title": "Romance"
+                "id": 18,
+                "title": "Kung Fu"
             }
         ],
         "actors": [
             {
-                "id": 163982182073900544,
-                "name": "Ryan Gosling"
+                "id": 1639821822073900544,
+                "name": "Sonya Blade"
             },
             {
                 "id": 163982199253770240,
-                "name": "Rachel McAdams"
+                "name": "Sub-Zero"
             }
         ],
-        "is_series": false,
+        "is_series": true,
         "release_date": "2004-06-25T00:00:00.000000Z"
     }
 ]

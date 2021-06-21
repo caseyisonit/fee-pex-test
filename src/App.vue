@@ -42,12 +42,10 @@ body {
     text-align: center;
     color: #2c3e50;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+
+h1 {
+    font-size: 2.25rem;
+    line-height: 2.25rem;
     font-weight: 100;
 }
 </style>

@@ -26,25 +26,28 @@ export default new Vuex.Store({
                     .get(`/mock/movies.json`)
                     .then((response) => {
                         const movies = response.data;
-                        commit('setMovies', movies);
                         // eslint-disable-next-line
                         const collectionOfGenres: any[] = [];
 
                         movies.forEach((movie) => {
+                            //applies a randomColor to the object to be used in the cards
                             const color = '#' + Math.floor(Math.random() * 16777215).toString(16);
                             movie.randomColor = color;
-
-                            console.log(movie);
-
+                            //pushes all genres from all movies
                             movie.genre.forEach((singleGenre) => {
                                 collectionOfGenres.push(singleGenre);
                             });
                         });
-
+                        //removes duplicate genres
                         const uniqueGenres = Array.from(new Set(collectionOfGenres.map((genre) => genre.id))).map((id) => {
                             return collectionOfGenres.find((genre) => genre.id === id);
                         });
-
+                        //sorts genre based on id
+                        uniqueGenres.sort((a, b) => {
+                            return a.id - b.id;
+                        });
+                        
+                        commit('setMovies', movies);
                         commit('setGenres', uniqueGenres);
                         resolve(response);
                         return movies;
