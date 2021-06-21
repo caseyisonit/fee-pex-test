@@ -7,6 +7,7 @@
                 </div>
                 <input class="input" placeholder="Seek" v-model="search" />
             </div>
+            <div class="flex-container seperator">— or —</div>
             <div class="flex-container">
                 <div class="icon">
                     <font-awesome-icon icon="filter" />
@@ -107,6 +108,12 @@ export default {
     padding: 1rem;
     min-width: 18rem;
 }
+    .seperator {
+        color: #ffffff;
+        width: auto;
+        min-width: auto;
+        margin: auto 0;
+    }
 .input {
     color: #ffffff;
     background-color: #333333;

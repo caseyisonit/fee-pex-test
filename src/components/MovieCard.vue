@@ -18,13 +18,8 @@ export default {
         movie: { type: Object, required: true }
     },
     computed: {
-        randomColor() {
-            const color = '#' + Math.floor(Math.random() * 16777215).toString(16);
-            return color;
-        },
-
         cssProps() {
-            return '--background-color: ' + this.randomColor;
+            return '--background-color: ' + this.movie.randomColor;
         }
     }
 };

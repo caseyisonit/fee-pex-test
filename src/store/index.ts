@@ -30,6 +30,12 @@ export default new Vuex.Store({
                     const collectionOfGenres : any[] = [];
 
                     movies.forEach((movie) => {
+                      
+                        const color = '#' + Math.floor(Math.random() * 16777215).toString(16);
+                        movie.randomColor = color
+
+                        console.log(movie)
+                        
                         movie.genre.forEach((singleGenre) => {
                             collectionOfGenres.push(singleGenre);
                         });
