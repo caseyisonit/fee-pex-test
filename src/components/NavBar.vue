@@ -1,8 +1,6 @@
 <template>
     <div class="nav-bar">
-        <img class="logo" alt="Vue logo" src="../assets/logo.png" />
-        <input class="search-input" placeholder="Search" /> 
-        <button class="search-button" role="submit">Go</button>
+        <img class="logo" alt="Cineseek logo" src="../assets/cineseek.svg" />
     </div>
 </template>
 <script>
@@ -11,21 +9,19 @@ export default {};
 <style lang="scss">
 .nav-bar {
     background-color: black;
-    height: 100vh;
-    width: 300px;
-    position: absolute;
-    left: 0;
-    top: 0;
+    background-image: url('../assets/beanstalk-dark.png');
+    width: 100vw;
+    margin: 0;
 }
 
 .logo {
-    height: 75px;
-    padding: 1rem;
-    display: flex;
+    width: 13rem;
     margin: auto;
-}
-
-.search-input {
-    color: white;
+    padding: 2rem;
+    display: block;
+    // border-bottom: #666 1px solid;
+    @media (min-width: 415px) {
+        display: flex;
+    }
 }
 </style>
